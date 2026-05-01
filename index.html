@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralDeck | AI Study Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Neural<span>Deck</span></h1>
+            <p>Master your memory with 3D recall.</p>
+        </header>
+
+        <div class="stats-container">
+            <div class="filter-group">
+                <label for="filter-subject">Subject:</label>
+                <select id="filter-subject">
+                    <option value="all">All Subjects</option>
+                </select>
+            </div>
+            <div class="progress-info">
+                <span>Card <span id="current-index">0</span> of <span id="total-cards">0</span></span>
+                <button id="delete-card" class="delete-small-btn">Delete Card</button>
+            </div>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <div class="card-container" id="flip-btn">
+            <div class="flashcard" id="flashcard">
+                <div class="card-front">
+                    <p id="front-text">Add your first card to begin!</p>
+                </div>
+                <div class="card-back">
+                    <p id="back-text">Answer will appear here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="secondary-btn" id="prev-btn">Previous</button>
+            <button class="main-btn" id="next-btn">Next Card</button>
+        </div>
+
+        <div class="ai-container">
+            <h3>✨ AI Study Engine</h3>
+            <div class="input-group">
+                <input type="text" id="ai-topic" placeholder="Topic (e.g., JavaScript, History)">
+            </div>
+            <button class="ai-btn" id="generate-btn">Generate with AI</button>
+        </div>
+
+        <div class="add-container">
+            <h3>+ Create New Card</h3>
+            <div class="input-group">
+                <input type="text" id="subject" placeholder="Subject (e.g., JavaScript)">
+                <textarea id="question" placeholder="Enter Question..."></textarea>
+                <textarea id="answer" placeholder="Enter Answer..."></textarea>
+            </div>
+            <button class="add-btn" id="add-card">Add to Deck</button>
+            <button class="clear-btn" id="clear-deck">Clear Entire Deck</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

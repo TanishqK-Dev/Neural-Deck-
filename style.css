@@ -1,0 +1,69 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --success: #10b981;
+    --danger: #ef4444;
+    --ai-purple: #7c3aed;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container { width: 100%; max-width: 420px; display: flex; flex-direction: column; }
+
+header { text-align: center; margin-bottom: 20px; }
+header h1 { font-size: 2.2rem; letter-spacing: -1px; }
+header h1 span { color: var(--primary); text-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
+header p { font-size: 0.9rem; opacity: 0.6; }
+
+.stats-container { background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 16px; margin-bottom: 20px; }
+.filter-group { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; }
+
+select { flex: 1; background: #0f172a; color: white; border: 1px solid #334155; padding: 8px; border-radius: 8px; outline: none; }
+
+.progress-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.8rem; }
+.delete-small-btn { background: transparent; color: var(--danger); border: 1px solid var(--danger); padding: 4px 8px; font-size: 0.7rem; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+.delete-small-btn:hover { background: var(--danger); color: white; }
+
+.progress-bar { background: #334155; height: 6px; border-radius: 10px; overflow: hidden; }
+#progress { background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 0%; height: 100%; transition: width 0.4s ease; }
+
+.card-container { perspective: 1000px; height: 220px; margin-bottom: 20px; cursor: pointer; }
+.flashcard { width: 100%; height: 100%; position: relative; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+.flashcard.flipped { transform: rotateY(180deg); }
+
+.card-front, .card-back {
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+    display: flex; align-items: center; justify-content: center; padding: 25px;
+    border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;
+    font-size: 1.1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); overflow-y: auto;
+}
+.card-front { background: var(--card-bg); }
+.card-back { background: var(--primary); transform: rotateY(180deg); }
+
+.controls { display: flex; gap: 12px; margin-bottom: 20px; }
+button { border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.1s; }
+.main-btn { flex: 2; background: var(--primary); color: white; }
+.secondary-btn { flex: 1; background: #334155; color: white; }
+
+/* AI Generator Container UI */
+.ai-container { background: rgba(124, 58, 237, 0.05); padding: 20px; border-radius: 20px; border: 1px solid rgba(124, 58, 237, 0.3); margin-bottom: 20px; }
+.ai-container h3 { font-size: 1rem; margin-bottom: 12px; color: #c4b5fd; }
+.ai-btn { width: 100%; background: linear-gradient(135deg, var(--ai-purple), var(--secondary)); color: white; margin-top: 5px; }
+
+.add-container { background: rgba(255, 255, 255, 0.02); padding: 20px; border-radius: 20px; border: 1px dashed #334155; }
+.input-group input, .input-group textarea { width: 100%; background: #1e293b; border: 1px solid #334155; color: white; padding: 12px; border-radius: 10px; margin-bottom: 10px; outline: none; }
+.add-btn { width: 100%; background: var(--success); color: white; }
+.clear-btn { width: 100%; background: transparent; color: #94a3b8; margin-top: 15px; font-size: 0.75rem; text-decoration: underline; }
